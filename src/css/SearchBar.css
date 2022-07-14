@@ -1,0 +1,35 @@
+.search-bar {
+    width: 80%;
+    max-width: 450px;
+    background: white;
+    display: flex;
+    align-items: center;
+    border-radius: 60px;
+    padding-left: 20px;
+    margin: 5px;
+}
+
+.search-bar input {
+    background: transparent;
+    flex: 1;
+    border: 0;
+    outline: none;
+}
+
+.search-bar .searchButton {
+    border: 0;
+    padding: 10px 15px;
+    border-radius: 60px;
+}
+
+.searchButton {
+    background: linear-gradient(#1dd1ac, #00b4e2);
+    transition-duration: .5s;
+    color: white;
+}
+
+.searchButton:hover {
+    background-color: red;
+    border-radius: 15px;
+    transition-duration: .5s;
+}
