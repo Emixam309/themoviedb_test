@@ -11,15 +11,10 @@ function FilmOverview({filmId, updateFilmId, films}) {
     const [items, setItems] = useState([])
 
     useEffect(() => {
-        console.log("useEffect " + filmId)
         if (filmId !== undefined)
             fetchFilm()
     }, [filmId])
 
-
-
-    console.log(items)
-    console.log(filmId)
     if (filmId === undefined || items === []) {
     } else if (error) {
         return <div>Erreur : {error}</div>;
@@ -41,7 +36,7 @@ function FilmOverview({filmId, updateFilmId, films}) {
                     <h1>{items.title} <span className="year">({new Date(items.release_date).getFullYear()})</span>
                     </h1>
                     <p>{new Date(items.release_date).toLocaleDateString('fr') + " · " +
-                        items.genres.map(genre => genre.name) + " · " +
+                        items.genres.map(genre => " " + genre.name) + " · " +
                         timeConvert(items.runtime)}</p>
                     <div className="note">
                         <div className={"c100 p" + items.vote_average * 10 + " small green"}>

@@ -14,7 +14,7 @@ function FilmCard({title, release_date, poster_path, Id, filmId, updateFilmId}) 
 
     function handleClick() {
         updateFilmId(Id)
-        document.getElementById("overviewCard").scrollIntoView({ behavior: 'smooth' })
+        document.getElementById("overviewCard").scrollIntoView({ behavior: 'smooth', block: 'center' })
     }
 
     return (
