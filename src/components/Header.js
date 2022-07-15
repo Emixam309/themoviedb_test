@@ -7,7 +7,6 @@ function Header({updateSearch}) {
         <header>
             <form onSubmit={(e) => {
                 e.preventDefault()
-                console.log(e.target['search-data'].value)
                 updateSearch(e.target['search-data'].value)
             }} className="search">
                 <div className="search-bar">

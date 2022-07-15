@@ -18,6 +18,18 @@
     text-overflow: ellipsis;
 }
 
+
+.card-selected {
+    width: 210px;
+    margin: 15px;
+    background-color: white;
+    box-shadow: 0 5px 20px #999;
+    transition-duration: .3s;
+    border-radius: 10px;
+    overflow: hidden;
+    font-size: 105%;
+}
+
 .card-body {
     text-align:center;
     padding-bottom: 10px;
@@ -49,8 +61,16 @@
     transition-duration: .3s;
 }
 
-.popular {
+.card-selected img {
+    height: 320px;
+    transition-duration: .3s;
+}
+
+.card-container {
     /*height: 455px;*/
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
     justify-content: center;
     align-items: center;
