@@ -1,10 +1,10 @@
 import FilmCard from "./FilmCard";
 import "../components/FilmCard"
-import {useEffect} from "react";
+import {useEffect, Fragment} from "react";
 
 function PopularFilms({films, filmId, updateFilmId, setLoadedPopularFilms}) {
     useEffect(() => {
-        setTimeout(() => setLoadedPopularFilms(),1000)
+        setTimeout(() => setLoadedPopularFilms())
     }, [])
     const items = films.slice(0, 5)
     return (
@@ -12,7 +12,7 @@ function PopularFilms({films, filmId, updateFilmId, setLoadedPopularFilms}) {
             <h2 className="sectionTitle">Films Populaires</h2>
             <div className="card-container">
                 {items.map(item => (
-                    <div key={'popular-' + item.id}>
+                    <Fragment key={'popular-' + item.id}>
                         <FilmCard
                             title={item.title}
                             release_date={new Date(item.release_date).toLocaleDateString('fr')}
@@ -21,7 +21,7 @@ function PopularFilms({films, filmId, updateFilmId, setLoadedPopularFilms}) {
                             filmId={filmId}
                             updateFilmId={updateFilmId}
                         />
-                    </div>
+                    </Fragment>
                 ))}
             </div>
         </>

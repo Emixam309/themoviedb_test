@@ -8,7 +8,7 @@ function FilmCard({title, release_date, poster_path, Id, filmId, updateFilmId}) 
         if (Id !== filmId) {
             return "card"
         } else {
-            return "card-selected"
+            return "card card-selected"
         }
     }
 
@@ -18,7 +18,6 @@ function FilmCard({title, release_date, poster_path, Id, filmId, updateFilmId}) 
     }
 
     return (
-
         <div className={isSelected()} onClick={() => handleClick()}>
             <img className="card-image" src={`https://image.tmdb.org/t/p/w300${poster_path}`} alt={title}/>
             <div className="card-body">

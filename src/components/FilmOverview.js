@@ -39,8 +39,8 @@ function FilmOverview({filmId, updateFilmId, films}) {
                         items.genres.map(genre => " " + genre.name) + " · " +
                         timeConvert(items.runtime)}</p>
                     <div className="note">
-                        <div className={"c100 p" + items.vote_average * 10 + " small green"}>
-                            <span>{items.vote_average * 10}%</span>
+                        <div className={"c100 p" + Math.round(items.vote_average * 10) + " small green"}>
+                            <span>{Math.round(items.vote_average * 10)}%</span>
                             <div className="slice">
                                 <div className="bar"></div>
                                 <div className="fill"></div>
