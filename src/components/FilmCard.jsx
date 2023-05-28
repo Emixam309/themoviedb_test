@@ -2,10 +2,10 @@ import '../css/FilmCard.css'
 import FilmOverview from "./FilmOverview";
 
 //Carte des films populaires et de la recherche. Contient le titre l'affiche et la date de sortie
-function FilmCard({title, release_date, poster_path, Id, filmId, updateFilmId}) {
-
+function FilmCard({ film, getFilm, selectedFilm }) {
+    const { id, title, release_date, poster_path } = film;
     function isSelected() {
-        if (Id !== filmId) {
+        if (id !== selectedFilm.id) {
             return "card"
         } else {
             return "card card-selected"
@@ -13,7 +13,7 @@ function FilmCard({title, release_date, poster_path, Id, filmId, updateFilmId}) 
     }
 
     function handleClick() {
-        updateFilmId(Id)
+        getFilm(film)
         document.getElementById("overviewCard").scrollIntoView({ behavior: 'smooth', block: 'center' })
     }
 
@@ -22,7 +22,7 @@ function FilmCard({title, release_date, poster_path, Id, filmId, updateFilmId}) 
             <img className="card-image" src={`https://image.tmdb.org/t/p/w300${poster_path}`} alt={title}/>
             <div className="card-body">
                 <h4 className="card-title">{title}</h4>
-                <time className="card-date">{release_date}</time>
+                <time className="card-date">{new Date(release_date).toLocaleDateString('fr')}</time>
             </div>
         </div>
     )

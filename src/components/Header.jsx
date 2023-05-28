@@ -1,13 +1,12 @@
-
 import '../css/header.css'
 import "../css/SearchBar.css"
 
-function Header({updateSearch}) {
+function Header({getListFilms}) {
     return (
         <header>
             <form onSubmit={(e) => {
                 e.preventDefault()
-                updateSearch(e.target['search-data'].value)
+                getListFilms(e.target['search-data'].value)
             }} className="search">
                 <div className="search-bar">
                     <input name="search-data" type="text" placeholder="Rechercher un film"/>
